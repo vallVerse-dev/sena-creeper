@@ -2,6 +2,8 @@ name: CI/CD Pipeline con Seguridad
 
 on:
   push:
+    branches: ["**"]
+  pull_request:
     branches: ["main"]
 
 jobs:
