@@ -3,6 +3,8 @@ from flask_cors import CORS
 import pymysql
 import os
 
+MYSQL_PASSWORD = "Nosenose123"
+
 app = Flask(__name__)
 CORS(app)
 
@@ -11,7 +13,7 @@ def get_db_connection():
         host=os.environ.get('DB_HOST', 'db'),
         database=os.environ.get('DB_NAME', 'sena_creeper'),
         user=os.environ.get('DB_USER', 'user'),
-        password=os.environ.get('DB_PASSWORD', 'password'),
+        password=MYSQL_PASSWORD,
         cursorclass=pymysql.cursors.DictCursor
     )
 
