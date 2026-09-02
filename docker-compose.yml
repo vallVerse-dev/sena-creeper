@@ -50,6 +50,27 @@ services:
     depends_on:
       - backend
 
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    ports:
+      - "3001:3001"
+    volumes:
+      - uptime_kuma_data:/app/data
+    networks:
+      - app-net
+    restart: unless-stopped
+
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: dozzle
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "9999:8080"
+    networks:
+      - app-net
+
 networks:
   app-net:
     driver: bridge
@@ -58,3 +79,4 @@ volumes:
   mysql_data:
   npm_data:
   npm_letsencrypt:
+  uptime_kuma_data:
