@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sena-Creeper API</title>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .creeper {
+            display: grid;
+            grid-template-columns: repeat(8, 30px);
+            grid-template-rows: repeat(8, 30px);
+            gap: 0;
+            margin-bottom: 2rem;
+        }
+        .creeper div {
+            width: 30px;
+            height: 30px;
+        }
+        .green-dark { background: #2e7d32; }
+        .green-light { background: #4caf50; }
+        .black { background: #000; }
+        .white { background: #fff; }
+        .gray { background: #888; }
+    </style>
+</head>
+<body>
+    <div class="creeper">
+        <!-- Fila 1 -->
+        <div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div>
+        <!-- Fila 2 -->
+        <div class="green-dark"></div><div class="green-dark"></div><div class="green-light"></div><div class="green-light"></div><div class="green-light"></div><div class="green-light"></div><div class="green-dark"></div><div class="green-dark"></div>
+        <!-- Fila 3 -->
+        <div class="green-dark"></div><div class="green-light"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="green-light"></div><div class="green-dark"></div>
+        <!-- Fila 4 -->
+        <div class="green-dark"></div><div class="green-light"></div><div class="black"></div><div class="green-light"></div><div class="green-light"></div><div class="black"></div><div class="green-light"></div><div class="green-dark"></div>
+        <!-- Fila 5 -->
+        <div class="green-dark"></div><div class="green-light"></div><div class="green-light"></div><div class="black"></div><div class="black"></div><div class="green-light"></div><div class="green-light"></div><div class="green-dark"></div>
+        <!-- Fila 6 -->
+        <div class="green-dark"></div><div class="green-light"></div><div class="green-light"></div><div class="green-light"></div><div class="green-light"></div><div class="green-light"></div><div class="green-light"></div><div class="green-dark"></div>
+        <!-- Fila 7 -->
+        <div class="green-dark"></div><div class="green-dark"></div><div class="green-light"></div><div class="green-light"></div><div class="green-light"></div><div class="green-light"></div><div class="green-dark"></div><div class="green-dark"></div>
+        <!-- Fila 8 -->
+        <div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div><div class="green-dark"></div>
+    </div>
+
+    <h1>Sena-Creeper API</h1>
+    <p>Servicio CRUD de usuarios</p>
+
+    <div style="background:#333; padding: 1rem 2rem; border-radius: 10px;">
+        <p>Endpoints disponibles:</p>
+        <ul style="text-align:left;">
+            <li><a href="/api/usuarios" style="color:#4caf50;">GET /api/usuarios</a> - Listar usuarios</li>
+            <li>POST /api/usuarios - Crear usuario</li>
+            <li>GET /api/usuarios/{id} - Obtener usuario</li>
+            <li>PUT /api/usuarios/{id} - Actualizar usuario</li>
+            <li>DELETE /api/usuarios/{id} - Eliminar usuario</li>
+        </ul>
+    </div>
+    <p style="margin-top:1rem;">Visita <a href="/api/health" style="color:#4caf50;">/api/health</a> para verificar estado</p>
+</body>
+</html>

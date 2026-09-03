@@ -1,8 +1,7 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 import pymysql
 import os
-
 
 app = Flask(__name__)
 CORS(app)
@@ -15,6 +14,14 @@ def get_db_connection():
         password=os.environ.get('DB_PASSWORD', 'password'),
         cursorclass=pymysql.cursors.DictCursor
     )
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/api/health')
+def health():
+    return jsonify({"status": "OK"}), 200
 
 @app.route('/api/usuarios', methods=['POST'])
 def crear_usuario():
